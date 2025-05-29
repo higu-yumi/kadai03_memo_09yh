@@ -1,0 +1,185 @@
+/* ＝＝＝＝＝＝＝＝＝
+
+共通
+
+＝＝＝＝＝＝＝＝＝ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0;
+  background: linear-gradient(90deg, #fff3e7, #fcfceb);
+  height: 100vh;
+  text-align: left;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  color: #444444;
+}
+
+:root {
+  --gray-color: #bababa;
+  --green-color: #279d99;
+  --orange-color: #ef9c29;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ＝＝＝＝＝＝＝＝＝
+
+ヘッダー
+
+＝＝＝＝＝＝＝＝＝ */
+
+header {
+  text-align: center;
+  margin: 40px auto;
+}
+
+h1 {
+  font-size: clamp(1.375rem, 0.576rem + 3.4vw, 3.125rem);
+  font-weight: bold;
+  color: var(--green-color);
+}
+
+/* ＝＝＝＝＝＝＝＝＝
+
+メイン
+
+＝＝＝＝＝＝＝＝＝ */
+
+main {
+  display: block;
+  position: relative;
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+.wrap-text {
+  margin-top: 24px;
+}
+
+.text {
+  margin-bottom: 5px;
+}
+
+/* ----- タイトル入力フォーム ----- */
+#titlekey {
+  width: 100%;
+  padding: 8px;
+  background-color: #ffffff;
+  border: 2px solid var(--gray-color);
+  border-radius: 5px;
+}
+
+#titlekey:focus {
+  outline: none; /* デフォルトの枠線を消す */
+  border: 2px solid var(--green-color);
+}
+
+/* ----- 本文入力フォーム ----- */
+
+#memo {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--gray-color);
+  border-radius: 5px;
+  resize: vertical; /* 横方向のサイズのみ固定 */
+  line-height: 1.5;
+}
+
+#memo:focus {
+  outline: none; /* デフォルトの枠線を消す */
+  border: 2px solid var(--green-color);
+}
+
+/* ----- 保存ボタン ----- */
+
+.wrap-btn {
+  text-align: center;
+  margin-top: 24px;
+}
+
+#save {
+  background-color: var(--orange-color);
+  text-align: center;
+  outline: none; /* デフォルトの枠線を消す */
+  border: none; /* 枠線を削除 */
+  color: #ffffff;
+  padding: 5px 16px;
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#save:hover {
+  background-color: #eb8313;
+  transition: 0.2s;
+}
+
+/* ----- 削除ボタン ----- */
+
+#clear {
+  background-color: var(--gray-color);
+  text-align: center;
+  outline: none; /* デフォルトの枠線を消す */
+  border: none; /* 枠線を削除 */
+  color: #ffffff;
+  padding: 5px 16px;
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#clear:hover {
+  background-color: #9f9d9d;
+  transition: 0.2s;
+}
+
+/* ----- 保存リスト ----- */
+
+table {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #fafafa;
+}
+
+th {
+  width: 30%;
+  border: 2px solid var(--gray-color);
+  padding: 8px;
+}
+
+td {
+  border: 2px solid var(--gray-color);
+  padding: 8px;
+}
+
+/* ＝＝＝＝＝＝＝＝＝
+
+フッター
+
+＝＝＝＝＝＝＝＝＝ */
+
+footer {
+  margin-top: 32px;
+  background-color: var(--gray-color);
+}
+
+footer p {
+  padding: 16px;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+}

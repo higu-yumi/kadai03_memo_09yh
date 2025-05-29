@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>myMemoPad</title>
+  <!-- <script src="js/jquery-2.1.3.min.js"></script> -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header>
+    <h1>MemoPad</h1>
+  </header>
 
+  <main class="container">
+    <!-- 入力フォーム -->
+    <div class="wrap-text">
+      <p class="text">タイトル</p>
+      <input type="text" id="titlekey">
+    </div>
+    <div class="wrap-text">
+      <p class="text">テキスト</p>
+      <textarea id="memo"></textarea>
+    </div>
+
+    <!-- 保存ボタン -->
+    <div class="wrap-btn">
+      <button id="save">保存する</button>
+    </div>
+
+    <!-- 保存先リスト -->
+    <table id="list">
+      <!-- ここに追加データが挿入される -->
+    </table>
+
+    <!-- 削除ボタン -->
+    <div class="wrap-btn">
+      <button id="clear">削除する</button>
+    </div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy;2025 MemoPad</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
