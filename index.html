@@ -18,33 +18,42 @@
     <h1>MemoPad</h1>
   </header>
 
-  <main class="container">
-    <!-- 入力フォーム -->
-    <div class="wrap-text">
-      <p class="text">タイトル</p>
-      <input type="text" id="titlekey">
-    </div>
-    <div class="wrap-text">
-      <p class="text">テキスト</p>
-      <textarea id="memo"></textarea>
+  <main>
+    <div class="container">
+      <!-- 入力フォーム -->
+      <div class="wrap-text">
+        <p class="text">タイトル</p>
+        <input type="text" id="titlekey">
+      </div>
+      <div class="wrap-text">
+        <p class="text">テキスト</p>
+        <textarea id="memo"></textarea>
+      </div>
+      <!-- 保存ボタン -->
+      <div class="wrap-btn">
+        <button id="save">保存する</button>
+      </div>
+      <!-- 保存先リスト -->
+      <table id="list">
+        <!-- ここに追加データが挿入される -->
+      </table>
+      <!-- 削除ボタン -->
+      <div class="wrap-btn">
+        <button id="clear">削除する</button>
+      </div>
     </div>
 
-    <!-- 保存ボタン -->
-    <div class="wrap-btn">
-      <button id="save">保存する</button>
-    </div>
-
-    <!-- 保存先リスト -->
-    <table id="list">
-      <!-- ここに追加データが挿入される -->
-    </table>
-
-    <!-- 削除ボタン -->
-    <div class="wrap-btn">
-      <button id="clear">削除する</button>
+    <!-- ポップアップ -->
+    <div id="pop-btn">
+      <span id="close-btn">&times;</span>
+      <h3>サブスクプラン<br>ご検討ください</h3>
+      <div class="illust"><img src="./img/memo_desk.png" alt="働く人"></div>
+      <p class="pop-text">詳しくはこちら</p>
     </div>
 
   </main>
+
+
 
   <!-- フッター -->
   <footer>

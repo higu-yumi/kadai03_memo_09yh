@@ -11,18 +11,23 @@ const list = document.getElementById("list");
 //
 
 save.addEventListener("click", function () {
-  //入力フォームから値を取得
-  const titleKeyValue = titleKey.value;
-  const memoValue = memo.value;
-  //localStorageに保存
-  localStorage.setItem(titleKeyValue, memoValue);
-  //保存したデータを画面一覧（#list）に追加し表示
-  list.innerHTML += `<tr><th>${titleKeyValue}</th><td>${memoValue}</td></tr>`;
-  //「削除する」ボタンを表示する
-  clear.style.display = "";
-  //フォームの中を空にする
-  titlekey.value = "";
-  memo.value = "";
+  if (titleKey.value === "" && memo.value === "") {
+    alert("何も入力されていません");
+    return;
+  } else {
+    //入力フォームから値を取得
+    const titleKeyValue = titleKey.value;
+    const memoValue = memo.value;
+    //localStorageに保存
+    localStorage.setItem(titleKeyValue, memoValue);
+    //保存したデータを画面一覧（#list）に追加し表示
+    list.innerHTML += `<tr><th>${titleKeyValue}</th><td>${memoValue}</td></tr>`;
+    //「削除する」ボタンを表示する
+    clear.style.display = "";
+    //フォームの中を空にする
+    titlekey.value = "";
+    memo.value = "";
+  }
 });
 
 //
@@ -30,15 +35,18 @@ save.addEventListener("click", function () {
 //
 
 clear.addEventListener("click", function () {
-  //localStorageのデータを全てクリアする
-  localStorage.clear();
-  //画面のリストを空にする
-  list.innerHTML = "";
-  //入力フォームも併せて空にする
-  titleKey.value = "";
-  memo.value = "";
-  //「削除する」ボタンを非表示にする
-  clear.style.display = "none";
+  const result = window.confirm("すべての内容が削除されます");
+  if (result) {
+    //localStorageのデータを全てクリアする
+    localStorage.clear();
+    //画面のリストを空にする
+    list.innerHTML = "";
+    //入力フォームも併せて空にする
+    titleKey.value = "";
+    memo.value = "";
+    //「削除する」ボタンを非表示にする
+    clear.style.display = "none";
+  }
 });
 
 //
@@ -55,7 +63,20 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 //
-// 4.削除ボタン押下でポップアップ（confirm）
+// ポップアップ広告の表示
 //
 
-window.confirm("全ての内容が削除されます");
+// IDの取得
+const popBtn = document.getElementById("pop-btn");
+const close = document.getElementById("close-btn");
+
+// 3秒後に表示
+function popUp() {
+  popBtn.style.display = "block";
+}
+setTimeout(popUp, 3000);
+
+//クローズボタン押下で非表示
+close.addEventListener("click", function () {
+  popBtn.style.display = "none";
+});
